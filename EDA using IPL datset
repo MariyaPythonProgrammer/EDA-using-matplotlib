@@ -1,0 +1,46 @@
+import os
+import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
+#for loading dataset click on given link      https://www.kaggle.com/code/mariyashaban/eda-using-matplotlib-library/input 
+data=pd.read_csv('C:/Users/USER/Downloads/Book_ipl22_ver_33.csv')
+
+print(data.head()) #printing 1st five rows
+print(data.isnull().sum()) #checking null values
+print(data.describe()) #printing basic statistic
+#line plot
+plt.plot(data['match_id'],data['highscore'],marker='*')
+plt.xlabel('match')
+plt.ylabel('Highest Score')
+plt.title('Highest Score in matches')
+plt.show()
+
+
+#sub plot
+plt.subplot(2,1,1)
+plt.plot(data['match_id'],data['first_ings_wkts'],marker='o')
+plt.title('firstings wekect in matches')
+plt.ylabel('no of wekects')
+
+plt.subplot(2,1,2)
+plt.plot(data['match_id'],data['second_ings_wkts'],marker='o')
+plt.title('secondings wecket in matches')
+plt.ylabel('no of wekect ')
+plt.show()
+
+#scatter plot
+plt.scatter(data['match_id'],data['first_ings_score'])
+plt.scatter(data['match_id'],data['second_ings_score'])
+plt.title('comparing 1st and 2nd ings score')
+plt.ylabel('match scores1')
+plt.show()
+
+plt.barh(data['venue'].unique(), data['venue'].value_counts())
+plt.xlabel('no of matches')
+plt.ylabel('stadium name')
+plt.show()
+
+#pie chart
+plt.pie(data['match_winner'].value_counts(),labels=data['match_winner'].value_counts().index)
+plt.title('Distribution of winning matches')
+plt.show()
