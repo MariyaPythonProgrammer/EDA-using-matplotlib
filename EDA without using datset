@@ -1,0 +1,56 @@
+import matplotlib.pyplot as plt
+import numpy as np
+
+#single line plot
+x=np.array([2,12])
+y=np.array([2,20])
+plt.plot(x,y)
+plt.show()
+
+#plotting start and end ppint
+x=np.array([0,20])
+y=np.array([0,30])
+plt.plot(x,y,'o') 
+plt.show()
+
+#plotting with multiple points
+x=np.array([2,7,4,1])
+y=np.array([10,4,6,4])
+plt.plot(x,y,'*')
+plt.show()
+
+#plotting subplot with random values
+x=np.array([0,1,2,3])
+y=np.array([3,8,1,10])
+plt.subplot(1,2,1)
+plt.plot(x,y,'*')
+
+x=np.array([0,1,2,3])
+y=np.array([10,20,30,40])
+plt.subplot(1,2,2)
+plt.plot(x,y)
+plt.show()
+
+#plotting scatter plot (scatter plot show the relation between 2 variable)
+x=np.array([5,7,8,7,2,17,2,9,4,11,12,9,6])
+y=np.array([99,86,87,88,111,86,103,87,94,78,77,85,86])
+plt.scatter(x, y)
+x=np.array([2,2,8,1,15,8,12,9,7,3,11,4,7,14,12])
+y=np.array([100,105,84,105,90,99,90,95,94,100,79,112,91,80,85])
+plt.scatter(x,y)
+plt.show()
+
+#plotting bar graph
+x=np.array(['iphone','oneplus','Redmi','Samsung'])
+y=np.array([100000,50000,20000,15000])
+plt.xlabel('name of company')
+plt.ylabel('rate of a phone')
+plt.bar(x,y) #for horizental bar graph use syntax plt.barh()
+plt.show()
+
+#plotting pie chart
+x=np.array([60,50,40,10])
+label=np.array(['Insta','Youtube','snap','other app'])
+plt.title('Screen time')
+plt.pie(x,labels=label)
+plt.show()
